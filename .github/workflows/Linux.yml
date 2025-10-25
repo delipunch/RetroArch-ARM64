@@ -26,8 +26,21 @@ jobs:
 
       - name: Configure Build
         run: |
-          ./configure 
-          #--disable-qt --enable-x11 --enable-xdelta --enable-wayland
+          ./configure \
+          --disable-floathard --disable-neon \
+	        --disable-caca \
+	        --disable-parport --disable-winrawinput \
+	        --enable-cheevos --enable-command --enable-lua --enable-networking \
+	        --enable-materialui --enable-ozone --enable-rgui --enable-xmb \
+	        --enable-egl --enable-kms --enable-qt --enable-wayland \
+	        --enable-opengles --enable-opengles3 --enable-opengles3_1 --enable-opengles3_2 --ena
+ble-opengl_core \
+	        --enable-sdl2 --enable-vulkan --enable-vulkan_display \
+	        --enable-alsa --enable-bluetooth --enable-crtswitchres --enable-pipewire --enable-pu
+lse \
+	        --enable-dbus --enable-hid --enable-libshake --enable-rpiled --enable-udev \
+	        --enable-networkgamepad --enable-ssl --enable-systemd --enable-wifi \
+	        --enable-thread_storage --enable-threads --enable-zlib
 
       - name: Compile RA
         run: |
