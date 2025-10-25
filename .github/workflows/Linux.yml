@@ -1,4 +1,4 @@
-name: CI Linux (i686)
+name: CI Linux (ARM64)
 
 on:
   push:
@@ -14,14 +14,11 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: git.libretro.com:5050/libretro-infrastructure/libretro-build-i386-ubuntu:xenial-gcc9
-      options: --user root
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - name: Check Out Repo
-        uses: taiki-e/checkout-action@v1
+        uses: actions/checkout-action@v1
 
       - name: Configure Build
         run: |
